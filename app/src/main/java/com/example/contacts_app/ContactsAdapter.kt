@@ -4,16 +4,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.contacts_app.databinding.ContactListItemBinding
 
-class ContactAdapter(val contacts: List<ContactsDataClass>) : RecyclerView.Adapter<ContactViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
+class ContactAdapter(val contacts: List<ContactsDataClass>) : RecyclerView.Adapter<ContactsViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactsViewHolder {
         val binding =
             ContactListItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-        return ContactViewHolder(binding)
+        return ContactsViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ContactsViewHolder, position: Int) {
         val currentContact= contacts[position]
-        val binding = holder.binding
+        val binding = holder.contactsbinding
         binding.tvContactName.text = currentContact.contactName
         binding.tvPhoneNumber.text = currentContact.phoneNumber
         binding.tvEmailAddress.text = currentContact.email
@@ -23,4 +23,4 @@ class ContactAdapter(val contacts: List<ContactsDataClass>) : RecyclerView.Adapt
         return contacts.size
     }
 }
-class ContactViewHolder(var binding: ContactListItemBinding): RecyclerView.ViewHolder(binding.root)
+class ContactsViewHolder(var contactsbinding: ContactListItemBinding): RecyclerView.ViewHolder(contactsbinding.root)
