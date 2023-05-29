@@ -14,9 +14,19 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onResume() {
         super.onResume()
+        showContacts()
     }
     fun showContacts(){
-        val contact1 = contactsDataClass(" ", "Flo", )
+        val contact1 = ContactsDataClass(" ", "Flo", "07122232232", "flo@gmal.com",)
+        val contact2 = ContactsDataClass(" ", "Flo", "07122232232", "flo@gmal.com",)
+        val contact3 = ContactsDataClass(" ", "Flo", "07122232232", "flo@gmal.com",)
+        val contact4 = ContactsDataClass(" ", "Flo", "07122232232", "flo@gmal.com",)
+
+        val contactList= listOf(contact1,contact2,contact3,contact4)
+        val contactsAdapt = ContactAdapter(contactList)
+        binding.rvContactsList.layoutManager = LinearLayoutManager(this)
+        binding.rvContactsList.adapter = contactsAdapt
+
     }
 
 }
