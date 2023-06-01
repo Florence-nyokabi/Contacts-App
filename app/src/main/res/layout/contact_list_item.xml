@@ -6,43 +6,43 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/imgAvator"
-        android:layout_width="98dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:id="@+id/imgFlo"
+        android:layout_width="121dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/flo" />
 
     <TextView
         android:id="@+id/tvContactName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
         android:text="Name"
-        app:layout_constraintStart_toEndOf="@+id/imgAvator"
+        app:layout_constraintStart_toEndOf="@+id/imgFlo"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvPhoneNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
         android:text="PhoneNumber"
-        app:layout_constraintStart_toEndOf="@+id/imgAvator"
+        app:layout_constraintStart_toEndOf="@+id/imgFlo"
         app:layout_constraintTop_toBottomOf="@+id/tvContactName" />
 
     <TextView
         android:id="@+id/tvEmailAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
         android:text="EmailAddress"
-        app:layout_constraintStart_toEndOf="@+id/imgAvator"
+        app:layout_constraintStart_toEndOf="@+id/imgFlo"
         app:layout_constraintTop_toBottomOf="@+id/tvPhoneNumber" />
 
     <androidx.constraintlayout.widget.Guideline
