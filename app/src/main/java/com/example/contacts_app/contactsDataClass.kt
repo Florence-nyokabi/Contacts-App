@@ -5,7 +5,4 @@ package com.example.contacts_app
      var contactName: String,
      var phoneNumber: String,
      var email: String,
-//     val PhoneNumber: CharSequence,
-//     val EmailAddress: CharSequence,
-//     val Name: CharSequence,
 )
