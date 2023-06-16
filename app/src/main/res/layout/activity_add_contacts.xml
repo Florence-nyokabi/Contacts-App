@@ -7,30 +7,30 @@
     tools:context=".AddContacts">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="289dp"
-        android:layout_height="222dp"
+        android:id="@+id/ivAvatar"
+        android:layout_width="338dp"
+        android:layout_height="247dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/etFirstName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01999998"
-        app:srcCompat="@drawable/flo" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/baseline_perm_identity_24" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilFirstName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.07999998">
+        app:layout_constraintTop_toBottomOf="@+id/ivAvatar"
+        app:layout_constraintVertical_bias="0.060000002">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etFirstName"
@@ -95,6 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email Address" />
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -109,4 +110,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilEmailAddress"
         app:layout_constraintVertical_bias="0.39" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
