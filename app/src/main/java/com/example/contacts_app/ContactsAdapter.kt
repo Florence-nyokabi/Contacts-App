@@ -25,8 +25,8 @@ class ContactAdapter(val contacts: List<ContactsDataClass>) : RecyclerView.Adapt
 //            .resize(80, 80)
 //            .centerCrop()
             .transform(CropCircleTransformation())
-            .placeholder(R.drawable.flo)
-            .into(binding.imgFlo)
+            .placeholder(R.drawable.baseline_perm_identity_24)
+            .into(binding.ivAvatar)
     }
 
     override fun getItemCount(): Int {

@@ -15,7 +15,6 @@ class AddContacts : AppCompatActivity() {
         binding = ActivityAddContactsBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
-
     override fun onResume() {
         super.onResume()
         setContentView(binding.root)
@@ -26,27 +25,27 @@ class AddContacts : AppCompatActivity() {
     }
 
     fun validateAddContact() {
-        val name = binding.etFirstName.text.toString()
-        val name2 = binding.etLastName.text.toString()
+        val firstName = binding.etFirstName.text.toString()
+        val lastName = binding.etLastName.text.toString()
         val phoneNumber = binding.etPhoneNumber.text.toString()
-        val email = binding.etEmailAddress.text.toString()
-        clearErrors()
+        val emailAddress = binding.etEmailAddress.text.toString()
 
         var error = false
-        if (name.isEmpty()) {
-            binding.tilFirstName.error = "First Name is required"
+
+        if (firstName.isEmpty()) {
+            binding.tilFirstName.error = "Please input first name"
             error = true
         }
-        if (name2.isEmpty()) {
-            binding.tilLastName.error = "Last Name is required"
+        if (lastName.isEmpty()) {
+            binding.tilLastName.error = "Please input last name"
             error = true
         }
         if (phoneNumber.isEmpty()) {
-            binding.tilPhoneNumber.error = "Phone Number is required"
+            binding.tilPhoneNumber.error = "Please input phone number"
             error = true
         }
-        if (name2.isEmpty()) {
-            binding.tilEmailAddress.error = "Email is required"
+        if (emailAddress.isEmpty()) {
+            binding.tilEmailAddress.error = "Please input email address"
             error = true
         }
         if (!error) {
@@ -56,7 +55,7 @@ class AddContacts : AppCompatActivity() {
             finish()
         }
     }
-    fun clearErrors() {
+    private fun clearErrors() {
         binding.tilFirstName.error = null
         binding.tilLastName.error = null
         binding.tilPhoneNumber.error = null
