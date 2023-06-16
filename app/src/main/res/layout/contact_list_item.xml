@@ -23,31 +23,31 @@
 
         <TextView
             android:id="@+id/tvContactName"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="70dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="14dp"
             android:layout_toEndOf="@id/imgFlo"
             android:text="Jane Doe" />
 
         <TextView
             android:id="@+id/tvPhoneNumber"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvContactName"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="14dp"
             android:layout_toEndOf="@id/imgFlo"
             android:text="0123234567" />
 
         <TextView
             android:id="@+id/tvEmailAddress"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvPhoneNumber"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="13dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="14dp"
             android:layout_toEndOf="@id/imgFlo"
             android:text="joe@gmail.com" />
 
