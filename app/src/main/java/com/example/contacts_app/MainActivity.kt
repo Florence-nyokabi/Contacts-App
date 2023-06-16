@@ -1,5 +1,6 @@
 package com.example.contacts_app
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,10 +12,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
     }
     override fun onResume() {
         super.onResume()
         showContacts()
+        binding.btnAddContact.setOnClickListener {
+            val intent = Intent(this,AddContacts::class.java)
+            startActivity(intent)
+        }
     }
     fun showContacts(){
         val contact1 = ContactsDataClass("https://images.unsplash.com/photo-1607982863027-0cb6818ee8b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cHJvZmlsZSUyMHBob3Rvc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60 ", "Flo", "07122232232", "flo@gmal.com")
