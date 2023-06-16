@@ -34,23 +34,23 @@ class AddContacts : AppCompatActivity() {
 
         var error = false
         if (name.isEmpty()) {
-            binding.tilFirstName.error = "First Name required"
+            binding.tilFirstName.error = "First Name is required"
             error = true
         }
         if (name2.isEmpty()) {
-            binding.tilLastName.error = "Last Name required"
+            binding.tilLastName.error = "Last Name is required"
             error = true
         }
         if (phoneNumber.isEmpty()) {
-            binding.tilPhoneNumber.error = "Phone Number required"
+            binding.tilPhoneNumber.error = "Phone Number is required"
             error = true
         }
         if (name2.isEmpty()) {
-            binding.tilEmailAddress.error = "Password required"
+            binding.tilEmailAddress.error = "Email is required"
             error = true
         }
         if (!error) {
-            val intent = Intent(this, AddContacts::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             Toast.makeText(this, "Contact added successfully", Toast.LENGTH_SHORT).show()
             finish()
