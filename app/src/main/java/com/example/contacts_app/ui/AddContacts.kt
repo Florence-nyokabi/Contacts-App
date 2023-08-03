@@ -1,15 +1,18 @@
-package com.example.contacts_app
+package com.example.contacts_app.ui
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.viewModels
+import com.example.contacts_app.R
 import com.example.contacts_app.databinding.ActivityAddContactsBinding
+import com.example.contacts_app.model.ContactsDataClass
+import com.example.contacts_app.view.ContactsViewModel
 
 
 class AddContacts : AppCompatActivity() {
     lateinit var binding: ActivityAddContactsBinding
-
+    val contactsViewModel: ContactsViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddContactsBinding.inflate(layoutInflater)
@@ -26,38 +29,32 @@ class AddContacts : AppCompatActivity() {
 
     fun validateAddContact() {
         val firstName = binding.etFirstName.text.toString()
-        val lastName = binding.etLastName.text.toString()
         val phoneNumber = binding.etPhoneNumber.text.toString()
         val emailAddress = binding.etEmailAddress.text.toString()
 
         var error = false
 
-        if (firstName.isEmpty()) {
-            binding.tilFirstName.error = "Please input first name"
+        if (firstName.isBlank()) {
+            binding.tilName.error = "Please input first name"
             error = true
         }
-        if (lastName.isEmpty()) {
-            binding.tilLastName.error = "Please input last name"
-            error = true
-        }
-        if (phoneNumber.isEmpty()) {
+        if (phoneNumber.isBlank()) {
             binding.tilPhoneNumber.error = "Please input phone number"
             error = true
         }
-        if (emailAddress.isEmpty()) {
+        if (emailAddress.isBlank()) {
             binding.tilEmailAddress.error = "Please input email address"
             error = true
         }
         if (!error) {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            Toast.makeText(this, "Contact added successfully", Toast.LENGTH_SHORT).show()
+            val newContact = ContactsDataClass(0, firstName, phoneNumber, emailAddress, "")
+            contactsViewModel.saveContact(newContact)
+            Toast.makeText(this, getString(R.string.contact_added_successfully), Toast.LENGTH_SHORT).show()
             finish()
         }
     }
     private fun clearErrors() {
-        binding.tilFirstName.error = null
-        binding.tilLastName.error = null
+        binding.tilName.error = null
         binding.tilPhoneNumber.error = null
         binding.tilEmailAddress.error = null
     }

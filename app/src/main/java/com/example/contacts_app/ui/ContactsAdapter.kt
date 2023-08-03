@@ -1,8 +1,10 @@
-package com.example.contacts_app
+package com.example.contacts_app.ui
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.contacts_app.R
 import com.example.contacts_app.databinding.ContactListItemBinding
+import com.example.contacts_app.model.ContactsDataClass
 import com.squareup.picasso.Picasso
 import jp.wasabeef.picasso.transformations.CropCircleTransformation
 

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Contacts-App</string>
+    <string name="contact_added_successfully">Contact added successfully</string>
 </resources>
